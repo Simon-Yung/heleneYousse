@@ -1,0 +1,19 @@
+---
+
+
+---
+<!doctype html>
+<html style="scroll-behavior: smooth;">
+	<head>
+		<link href="https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500&display=swap" rel="stylesheet"> 
+		<link rel="stylesheet" href="{{website.url}}/includes/assets/css/styles.css">
+		{% include "components/metadata.njk" %}
+	</head>
+	<body class="home_page"> 
+		{% include "components/header.njk" %}
+
+		{{ content | safe }}
+
+		{% include "components/footer.njk" %}
+	</body>
+</html>

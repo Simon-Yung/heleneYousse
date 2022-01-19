@@ -1,0 +1,17 @@
+<div class="langMenu">
+	<span class="langMenu__title">Language&nbsp;:</span>
+	<ul class="langMenu__dropDown">
+		{%- if page.url == "/" %}
+		<li><a class="langMenu__dropDown__language" href="{{ website.url }}/" >Français</a></li>
+		<li><a class="langMenu__dropDown__language" href="{{ website.url }}/lang=en/" >English</a></li>
+		{%- else %}
+			{%- if lang == fr %}
+				<li><a class="langMenu__dropDown__language" href="{{ page.url | replace( '/lang=en/' , '/' ) }}" >Français</a></li>
+				<li><a class="langMenu__dropDown__language" href="{{ page.url }}" >English</a></li>
+			{%- elif lang == en %}
+				<li><a class="langMenu__dropDown__language" href="{{ page.url }}" >Français</a></li>
+				<li><a class="langMenu__dropDown__language" href="/lang=en{{ page.url }}" >English</a></li>
+			{%- endif %}
+		{%- endif %}
+	</ul>
+</div>

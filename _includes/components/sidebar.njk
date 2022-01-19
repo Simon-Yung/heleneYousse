@@ -1,0 +1,107 @@
+
+
+<div class="sidebar">
+
+	<img class="sidebar__logo" src="{{website.url}}/assets/images/logo.png">
+
+	<div class="sidebar__line"></div>
+
+	<ul class="navlist">
+	{%- if page.lang == fr %}
+		{%- for chapter in collections.fr %}
+			{%- if chapter.url == page.url %}
+				<li class="navlist__chapter navlist__chapter--Highlight">
+						<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.name }}</a>
+						{%- if chapter.data.title_caption %}
+						<a class="navlist__chapter__smallText navlist__chapter__smallText--highlight" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.name_caption }}</a>
+						{%- endif %}
+			{%- else %}
+				<li class="navlist__chapter">
+						<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.name }}</a>
+						{%- if chapter.data.title_caption %}
+						<a class="navlist__chapter__smallText" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.name_caption }}</a>
+						{%- endif %}
+				{%- endif %}
+			</li>
+		{%- endfor %}
+	{%- elif page.lang == en %}
+		{%- for chapter in collections.en %}
+			<li class="navlist__chapter">
+			{%- if chapter.url == page.url %}
+					<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.title }}</a>
+					{%- if chapter.data.title_caption %}
+					<a class="navlist__chapter__smallText navlist__chapter__smallText--highlight" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.title_caption }}</a>
+					{%- endif %}
+			{%- else %}
+					<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.title }}</a>
+					{%- if chapter.data.title_caption %}
+					<a class="navlist__chapter__smallText" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.title_caption }}</a>
+					{%- endif %}
+			{%- endif %}
+			</li>
+		{%- endfor %}
+	{%- endif%}
+	</ul>
+
+	{% include "components/language_menu.njk" %}
+
+	{# <iframe class="news_iframe" scrolling="no" 
+			{% if page.path contains "lang=en" %}
+				src="{{ "/lang=en/news.html" | absolute_url }}" onload="resizeIframe(this)">
+			{% elsif page.path contains "lang=de" %}
+				src="{{ "/lang=de/news.html" | absolute_url }}" onload="resizeIframe(this)">
+			{% elsif page.path contains "lang=va" %}
+				src="{{ "/lang=va/news.html" | absolute_url }}" onload="resizeIframe(this)">
+			{% elsif page.path contains "lang=ca" %}
+				src="{{ "/lang=ca/news.html" | absolute_url }}" onload="resizeIframe(this)">
+			{% else %}
+				src="{{ "/news.html" | absolute_url }}" onload="resizeIframe(this)">
+			{% endif %}
+	</iframe> #}
+
+	<img class="sidebar__img" src="{{ website.url }}/assets/images/sidebarImg.jpg" alt="Latest expo">
+
+	<p class="sidebar__newsText">
+&#xAB; Tout comme un &#xEA;tre au long de sa vie, se m&#xE9;tamorphose depuis son &#xE9;closion jusqu&#x2019;&#xE0; sa disparition, les sculptures de H&#xE9;l&#xE8;ne Yousse, en fid&#xE8;les compagnes de route, t&#xE9;moignent de cette qu&#xEA;te du Moi de l&#x2019;artiste et de son essence existentielle.<br><br>
+Sans artifice, jetant en p&#xE2;ture, elle et son besoin de dire, elle cr&#xE9;&#xE9;. Ses &#xE9;motions r&#xE9;sonnent et nous font vibrer, instaurant entre ses &#x153;uvres et nous un dialogue muet et puissant.<br><br>
+Sa technique, en permanente &#xE9;volution, lui permet de travailler diff&#xE9;rents mat&#xE9;riaux. L&#x2019;opacit&#xE9; complexe du bronze,  ou au contraire la fragilit&#xE9; obtenue gr&#xE2;ce &#xE0; l&#x2019;utilisation de mat&#xE9;riaux organiques et ou synth&#xE9;tiques nous renvoient &#xE0; chaque fois &#xE0; l&#x2019;image de notre propre carnation, &#xE0; notre propre devenir de mortel &#x2026;<br><br>
+Et finalement, &#xE0; ce que nous sommes : une enveloppe vide qu&#x2019;il appartient &#xE0; chacun de remplir, de ses doutes , de ses peurs, mais aussi et surtout d&#x2019;amour, de vie et d&#x2019;espoir.<br><br>
+Comme si son &#x153;uvre paradoxalement si pr&#xE9;sente et si lointaine &#xE0; la fois, qui nous renvoyait &#xE0; notre irr&#xE9;vocable solitude, aujourd&#x2019;hui, tutoyait d&#xE9;sormais le ciel. &#xBB;<br><br>
+<b>Juliette Le Roux, A.HJ</b>
+	</p>
+
+	<div class="sidebar__line"></div>
+
+	<div>
+		{% if page.lang == en %}
+			<p class="sidebar__newsText"><b>EXIL</b> I had to go, and since that day I have worked on the theme of exile and the pain of leaving.<br>
+			In order not to leave alone, I invented traveling companionswho have neither face nor name, nor nationality or religion...
+			<a href="{{ site.url }}{{ site.baseurl }}/assets/pdf/exil.pdf">(download&nbsp;.pdf)</a>
+			</p>
+
+		{% elif page.lang == fr %}
+			<p class="sidebar__newsText"><b>L&#x27;EXIL</b> J&#x2019;ai du m&#x2019;en aller, et depuis ce jour je travaille souvent le th&#xE8;me de l&#x2019;exil et de la douleur du partir.<br>
+			Pour ne pas partir seule, je me suis invent&#xE9;e des compagnes de route qui n&#x2019;ont ni visage, ni nom, ni nationalit&#xE9;, ni religion... 
+			<a href="{{ website.completeUrl }}/assets/pdf/exil.pdf">(t&#xE9;l&#xE9;charger&nbsp;le&nbsp;.pdf)</a>
+			</p>
+		{% endif %}
+	</div>
+
+	<div class="sidebar__line"></div>
+
+	<div class="sidebar__share">
+		Share this on :<br>
+		<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="twitter-share-button" data-show-count="false">Tweeter</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<div style="display:block; height:1px"></div>
+		<div id="fb-root"></div>
+		<script async defer crossorigin="anonymous" src="https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0"></script>
+		<div class="fb-share-button" data-href="{{ site.url }}{{site.baseurl}}{{ page.url }}" data-layout="button" data-size="small"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=%2F&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Facebook</a></div>
+				<div style="display:block; height:5px"></div>
+		<a	data-pin-do="buttonBookmark" href="https://www.pinterest.com/pin/create/button/">Pinterest</a>
+		<script async defer src="//assets.pinterest.com/js/pinit.js"></script>
+				<div style="display:block; height:5px"></div>
+		<script src="https://platform.linkedin.com/in.js" type="text/javascript">lang: en_US</script>
+		<script type="IN/Share" data-url="{{ site.url }}{{site.baseurl}}{{ page.url }}"></script>
+	</div>
+
+</div>
