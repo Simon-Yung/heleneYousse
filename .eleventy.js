@@ -9,6 +9,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ "favicon.png": "favicon.png" });
 
 	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
+	eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
 	eleventyConfig.addDataExtension(
 		"csv",
 		(contents) => {
