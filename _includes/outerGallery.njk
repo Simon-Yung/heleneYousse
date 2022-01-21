@@ -1,4 +1,5 @@
 ---
+permalink: "{{ page_title | slugify }}/"
 ---
 <!doctype html>
 <html>
@@ -11,6 +12,8 @@
 			<link rel="stylesheet" href="{{website.completeUrl}}/assets/css/styles.css">
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
 			<script src="{{website.completeUrl}}/assets/js/modal.js" defer> </script>
+			<script src="{{website.completeUrl}}/assets/js/share.js" defer> </script>
+
 			{# <script src="{{website.completeUrl}}/assets/js/share.js" defer> </script> #}
 			{# {% seo %} <--------------------------- #}
 	</head>

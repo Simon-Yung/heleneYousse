@@ -6,72 +6,7 @@
 
 	<div class="sidebar__line"></div>
 
-	<ul class="navlist">
-	{%- if lang == "fr" %}
-		{%- for chapter in collections.fr %}
-			{%- if chapter.url == page.url %}
-				<li class="navlist__chapter navlist__chapter--Highlight">
-						<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">
-							<span>{{ chapter.data.chapter_name }}<span>
-						{%- if chapter.data.chapter_caption %}
-							<br><small class="navlist__chapter__smallText navlist__chapter__smallText--highlight">{{ chapter.data.chapter_caption }}</small>
-						{%- endif %}
-						</a>
-			{%- else %}
-				<li class="navlist__chapter">
-						<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">
-							<span>{{ chapter.data.chapter_name }}<span>
-						{%- if chapter.data.chapter_caption %}
-							<br><small class="navlist__chapter__smallText">{{ chapter.data.chapter_caption }}</small>
-						{%- endif %}
-						</a>
-			{%- endif %}
-			</li>
-		{%- endfor %}
-
-	{%- elif lang == "en" %}
-		{%- for chapter in collections.en %}
-			<li class="navlist__chapter">
-			{%- if chapter.url == page.url %}
-					<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">
-						<span>{{ chapter.data.chapter_name }}<span>
-					{%- if chapter.data.chapter_caption %}
-						<br><small class="navlist__chapter__smallText navlist__chapter__smallText--highlight">{{ chapter.data.chapter_caption }}</small>
-					{%- endif %}
-					</a>
-			{%- else %}
-					<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">
-						<span>{{ chapter.data.chapter_name }}<span>
-					{%- if chapter.data.chapter_caption %}
-						<br><small class="navlist__chapter__smallText">{{ chapter.data.chapter_caption }}</small>
-					{%- endif %}
-					</a>
-			{%- endif %}
-			</li>
-		{%- endfor %}
-
-	{%- else %}
-		{%- for chapter in collections.fr %}
-			<li class="navlist__chapter">
-			{%- if chapter.url == page.url %}
-					<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">
-						<span>{{ chapter.data.chapter_name }}<span>
-					{%- if chapter.data.title_caption %}
-						<br><small class="navlist__chapter__smallText navlist__chapter__smallText--highlight">{{ chapter.data.chapter_caption }}</small>
-					{%- endif %}
-					</a>
-			{%- else %}
-					<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">
-						<span>{{ chapter.data.chapter_name }}<span>
-					{%- if chapter.data.title_caption %}
-						<br><small class="navlist__chapter__smallText" href="{{ website.url }}{{ chapter.url }}">{{ chapter.data.chapter_caption }}</small>
-					{%- endif %}
-					</a>
-			{%- endif %}
-			</li>
-		{%- endfor %}
-	{%- endif%}
-	</ul>
+	{% include "components/navlist.njk" %}
 
 	{% include "components/language_menu.njk" %}
 
