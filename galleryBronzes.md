@@ -1,7 +1,8 @@
 ---
 layout: gallery.11ty.js
-title: Gallery Bronzes
-name: Gallery Bronzes
+page_title: Gallery Bronzes
+chapter_name: Gallery Bronzes
+chapter_caption: homepage, lol
 description:
 collection_id: bronzes
 number_of_columns: 4
