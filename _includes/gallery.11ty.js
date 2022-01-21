@@ -21,7 +21,7 @@ function resizeImage( file ) {
 
 	return {
 	thumbnailUrl : metadata.jpeg[0].url,
-	OGUrl : metadata.jpeg[metadata.jpeg.length - 1].url, // <---- metadata.jpeg[1] returns undefined ?!?!
+	OGUrl : metadata.jpeg[1].url, // <---- metadata.jpeg[1] returns undefined ?!?!
 	heightRatio : metadata.jpeg[0].height / metadata.jpeg[0].width * 100, // height is ??? percent of the width
 	widthRatio : metadata.jpeg[0].height / metadata.jpeg[0].width * 100 // width is ??? percent of the height
 	}
@@ -63,10 +63,10 @@ exports.render = function(data) {
 			gallery = gallery + `<div class="preview__widthBox">
 				<div class="preview__widthBox_heightBox" style="padding-bottom:${columns[i].imagesInColumn[ii].heightRatio}%">
 					<img class="preview__image" 
-					id=""${columns[i].imagesInColumn[ii].id}
+					id="${columns[i].imagesInColumn[ii].id}"
 					src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
-					data-OGUrl="${columns[i].imagesInColumn[ii].thumbnailUrl}"
-					data-caption="${columns[i].imagesInColumn[ii].caption}"
+					data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
+					data-caption="${columns[i].imagesInColumn[ii].caption.replace('\n','<br>')}"
 					alt="${columns[i].imagesInColumn[ii].caption}"
 					loading="lazy">
 				</div>

@@ -1,15 +1,11 @@
 
 		<!-- The Modalpart -->
 
-		<div id="ModalGallery" class="modal">
-			<span class="close" onclick="closeModalGallery()" >&times;</span>
-			<img class="modal_content" id="ImgModal" draggable="false">
-			<div id="Caption"></div>
-			<a class="prev" onclick="nextModal(-1)">&#10094;</a>
-			<a class="next" onclick="nextModal(+1)">&#10095;</a>
-			<a class="info" onclick="toggleInfo()">&nbsp;&nbsp;i&nbsp;&nbsp;</a>
+		<div id="modal" class="modal">
+			<img id="modalContent"  class="modal__image" draggable="false">
+			<span id="close" class="modal__closeButton">&times;</span>
+			<img id="previous" src="{{webiste.url}}/assets/images/previous.png" class="modal__previousButton" alt="Previous">
+			<img id="next" src="{{webiste.url}}/assets/images/next.png" class="modal__nextButton" alt="Next">
+			<div class="modal__caption"><p class="modal__caption__text" id="caption"> ... </p></div>
+			<img id="loader" class="modal__loader" src="{{website.url}}/assets/images/loading.png">
 		</div>
-
-		{# change that vvvvv #}
-		<img id="-1" style="display:none" src="{{website.url}}/assets/images/broken.png" alt="something went wrong,<br>please try again.">
-		<img id="-2" style="display:non" src="{{website.url}}/assets/images/loading.png">

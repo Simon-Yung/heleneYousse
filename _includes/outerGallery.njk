@@ -10,9 +10,8 @@
 
 			<link rel="stylesheet" href="{{website.completeUrl}}/assets/css/styles.css">
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
-			<script src="{{website.completeUrl}}/assets/js/modal_gallery.js" defer> </script>
-			<script src="{{website.completeUrl}}/assets/js/iframe.js" defer> </script>
-			<script src="{{website.completeUrl}}/assets/js/share.js" defer> </script>
+			<script src="{{website.completeUrl}}/assets/js/modal.js" defer> </script>
+			{# <script src="{{website.completeUrl}}/assets/js/share.js" defer> </script> #}
 			{# {% seo %} <--------------------------- #}
 	</head>
 	<body class="pageFlexLayout">
@@ -20,5 +19,6 @@
 
 		{{ content | safe }}
 
+		{% include "components/modal.njk" %}
 	</body>
 </html>
