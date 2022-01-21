@@ -1,5 +1,6 @@
 exports.data = {
-	layout : "outerGallery.njk"
+	layout : "outerGallery.njk",
+	// permalink : `${data.lang == 'en' ? '/lang=en+':'/'}${this.slugify(data.page_title)}}`
 };
 const Image = require("@11ty/eleventy-img");
 function resizeImage( file ) {

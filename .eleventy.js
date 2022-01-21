@@ -16,9 +16,8 @@ module.exports = (eleventyConfig) => {
 	
 	eleventyConfig.addCollection("frenchPages", function(collectionApi) {
 		let collection = collectionApi.getFilteredByTag("fr").sort( ( A , B ) => {
-			if (A.fileSlug.substring(0,1) == 'i' || B.fileSlug.substring(0,1) == 'i'){return -1;}
-			if (parseInt(A.fileSlug.substring(0,3)) < parseInt(B.fileSlug.substring(0,3))){return -1;}
-			if (parseInt(A.fileSlug.substring(0,3)) > parseInt(B.fileSlug.substring(0,3))){return +1;}
+			if (A.data.chapter_number < B.data.chapter_number){return -1;}
+			if (A.data.chapter_number > B.data.chapter_number){return +1;}
 			return 0;
 		});
 		for (let i=0; i< collection.length; i++){
@@ -28,9 +27,8 @@ module.exports = (eleventyConfig) => {
 	});
 	eleventyConfig.addCollection("EnglishPages", function(collectionApi) {
 		let collection = collectionApi.getFilteredByTag("en").sort( ( A , B ) => {
-			if (A.fileSlug.substring(0,1) == 'i' || B.fileSlug.substring(0,1) == 'i'){return -1;}
-			if (parseInt(A.fileSlug.substring(0,3)) < parseInt(B.fileSlug.substring(0,3))){return -1;}
-			if (parseInt(A.fileSlug.substring(0,3)) > parseInt(B.fileSlug.substring(0,3))){return +1;}
+			if (A.data.chapter_number < B.data.chapter_number){return -1;}
+			if (A.data.chapter_number > B.data.chapter_number){return +1;}
 			return 0;
 		});
 		for (let i=0; i< collection.length; i++){
