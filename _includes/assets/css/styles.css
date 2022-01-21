@@ -49,10 +49,6 @@ a {
 	flex-wrap: wrap;
 	min-width: 12rem;
 }
-
-/* .sidebar_card { background-color: #ffffff; margin-bottom: 20px; } */
-
-/*----------------------title----------------------*/
 .sidebar__logo {
 	margin-top: 0;/*?????*/
 	width: 100%;
@@ -60,7 +56,7 @@ a {
 .sidebar__line {
 	position: relative;
 	/* left: 10%; */
-	margin: 2rem auto 2rem auto;
+	margin: 3rem auto 3rem auto;
 	height: 1px;
 	width: 80%;
 	background-color: #614e40;
@@ -73,7 +69,7 @@ a {
 	flex-flow: column;
 	height: 1.5rem;
 	width: 100%;
-	margin: 2rem 0 2rem 0;
+	margin: 3rem 0 3rem 0;
 	background-color: #000000;
 }
 .langMenu__title{
@@ -137,8 +133,8 @@ a {
 .navlist__chapter{
 	display: list-item;
 	width: 100%;
+	padding-bottom: 0.25rem;
 	font: 400 1rem/1 "Montserrat",sans-serif;
-	line-height: 1;
 	color: #614e40;
 	transition: .3s ease-in-out;
 }
@@ -146,11 +142,11 @@ a {
 	color: #000000;
 	transition: .3s ease-in-out;
 
-	transform: translateX(0.5rem);
+	padding-left:0.5rem;
 }
 .navlist__chapter--Highlight{
 	color: #000000;
-	transform: translateX(0.5rem);
+	padding-left:0.5rem;
 }
 
 .navlist__chapter__text{
@@ -160,7 +156,7 @@ a {
 }
 .navlist__chapter__smallText{
 	display: inline-block;
-	padding: 0 0 0.25rem 2rem ;
+	padding: 0 0 0.25rem 1.5rem ;
 	opacity: 0.5;
 	font: inherit;
 	font-size: 0.75rem;
