@@ -9,14 +9,14 @@ function resizeImage( file ) {
 		widths: [ 300 , null ],
 		formats: [ "jpeg" ],
 		urlPath: "/img/",
-		outputDir: "./img/"
+		outputDir: "./_site/img/"
 	});
 	// get the metadata of the image even if the image generation is not finished yet
 	let metadata = Image.statsSync( file, {
 		widths: [ 300 , null ],
 		formats: [ "jpeg" ],
 		urlPath: "/img/",
-		outputDir: "./img/"
+		outputDir: "./_site/img/"
 	});
 
 	return {
@@ -33,7 +33,7 @@ exports.render = function(data) {
 		columns.push( { size : 0, imagesInColumn : []} );
 	}
 
-	for (i=0; i < data.imageCollections[data.collection_id].info.imagesList.length; i++ ){
+	for (i=0; i < data.imageCollections[data.collection_id].info.length; i++ ){
 
 		let smallestColumn = 0;
 		let smallestColumnSize = columns[0].size;
@@ -45,12 +45,12 @@ exports.render = function(data) {
 			};
 		}
 
-		columns[smallestColumn].imagesInColumn.unshift({
-			...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id].info.imagesList[i].file}` ),
-			...{ id : i, caption : data.imageCollections[data.collection_id].info.imagesList[i].caption }
+		columns[smallestColumn].imagesInColumn.push({
+			...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id].info[i].file}` ),
+			...{ id : i, caption : data.imageCollections[data.collection_id].info[i].caption }
 		})
 
-		columns[smallestColumn].size = columns[smallestColumn].size + columns[smallestColumn].imagesInColumn[0].heightRatio;
+		columns[smallestColumn].size += columns[smallestColumn].imagesInColumn[ (columns[smallestColumn].imagesInColumn.length -1) ].heightRatio;
 	}
 
 	let gallery = `<div class="gallery">

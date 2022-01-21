@@ -8,7 +8,7 @@ module.exports = (eleventyConfig) => {
 	eleventyConfig.addPassthroughCopy({ "_includes/assets": "assets" });
 	eleventyConfig.addPassthroughCopy({ "favicon.ico": "favicon.ico" });
 	eleventyConfig.addPassthroughCopy({ "favicon.png": "favicon.png" });
-	eleventyConfig.addPassthroughCopy({ "img": "img" });
+	// eleventyConfig.addPassthroughCopy({ "img": "img" });
 
 	eleventyConfig.addDataExtension("yaml", (contents) => yaml.load(contents));
 	eleventyConfig.addDataExtension("yml", (contents) => yaml.load(contents));
