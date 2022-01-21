@@ -16,23 +16,9 @@
 			{# {% seo %} <--------------------------- #}
 	</head>
 	<body class="pageFlexLayout">
-		{# change that vvvvv #}
-		<img id="-1" style="display:none" src="{{website.url}}/assets/images/broken.png" alt="something went wrong,<br>please try again.">
-		<img id="-2" style="display:none" src="{{website.url}}/assets/images/loading.png">
 		{% include "components/sidebar.njk" %}
 
 		{{ content | safe }}
-
-		<!-- The Modalpart -->
-
-		<div id="ModalGallery" class="modal">
-			<span class="close" onclick="closeModalGallery()" >&times;</span>
-			<img class="modal_content" id="ImgModal" draggable="false">
-			<div id="Caption"></div>
-			<a class="prev" onclick="nextModal(-1)">&#10094;</a>
-			<a class="next" onclick="nextModal(+1)">&#10095;</a>
-			<a class="info" onclick="toggleInfo()">&nbsp;&nbsp;i&nbsp;&nbsp;</a>
-		</div>
 
 	</body>
 </html>

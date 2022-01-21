@@ -16,9 +16,6 @@
 			{# {% seo %} <--------------------------- #}
 	</head>
 	<body class="pageFlexLayout">
-		{# change that vvvvv #}
-		<img id="-1" style="display:none" src="{{website.url}}/assets/images/broken.png" alt="something went wrong,<br>please try again.">
-		<img id="-2" style="display:none" src="{{website.url}}/assets/images/loading.png">
 		{% include "components/sidebar.njk" %}
 		{{ content | safe }}
 	</body>
