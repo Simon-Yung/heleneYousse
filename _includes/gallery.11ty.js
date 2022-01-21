@@ -33,6 +33,7 @@ exports.render = function(data) {
 		columns.push( { size : 0, imagesInColumn : []} );
 	}
 
+	// console.log( data.imageCollections[data.collection_id].info );
 	for (i=0; i < data.imageCollections[data.collection_id].info.length; i++ ){
 
 		let smallestColumn = 0;

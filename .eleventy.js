@@ -17,7 +17,8 @@ module.exports = (eleventyConfig) => {
 		(contents) => {
 			// console.log(contents);
 			// console.log(typeof(contents)); //content is a string
-			return csv.parse( 
+			let csvData;
+			csv.parse(
 				contents ,
 				{
 					// see https://www.papaparse.com/docs#config for detailed config options
@@ -32,8 +33,9 @@ module.exports = (eleventyConfig) => {
 							for ( let i=0 ; i < result.errors.length ; i++ )
 							console.log(result.errors[i])
 						}
-						console.log( result.data ); // for debug purpose
-						return result.data;
+						// console.log( result.data ); // for debug purpose
+						// return result.data;
+						csvData = result.data;
 					},
 					error: ( error, file ) => { console.log(error) },
 					download: false,
@@ -41,6 +43,7 @@ module.exports = (eleventyConfig) => {
 					fastMode: undefined, //Fast mode will automatically be enabled if no " characters appear in the input. 
 				}
 			);
+			return csvData;
 		}
 	);
 
