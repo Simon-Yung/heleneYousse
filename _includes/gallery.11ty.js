@@ -70,9 +70,9 @@ exports.render = function(data) {
 						<img class="preview__image" 
 						id="${columns[i].imagesInColumn[ii].id}"
 						src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
-						data-target-url="${columns[i].imagesInColumn[ii].OGUrl.caption.replace('\\n','<br>')}"
+						data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
 						data-caption="${columns[i].imagesInColumn[ii].caption.replace('\\n','<br>')}"
-						alt="${columns[i].imagesInColumn[ii].caption}"
+						alt="${columns[i].imagesInColumn[ii].caption.replace('\\n',' ; ')}"
 						loading="lazy">
 					</div>
 				</div>
@@ -81,8 +81,8 @@ exports.render = function(data) {
 			gallery= gallery + `</div>
 			`;
 		}
-	} catch{
-		console.error('error when rendering the gallery');
+	} catch (error){
+		console.error(`error when rendering the gallery:${error}`);
 	}
 	gallery = gallery + `</div`;
 
