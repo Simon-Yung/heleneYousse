@@ -381,7 +381,7 @@ a {
 
 	display: none;
 	grid-template-columns: 1rem 1fr 6rem 1rem;
-	grid-template-rows: 1rem 1fr 1fr 1fr 1rem ;
+	grid-template-rows: 1rem 1fr 2fr 2fr 1rem ;
 	justify-items: center;
 	align-items: center;
 	
