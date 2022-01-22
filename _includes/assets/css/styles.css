@@ -137,11 +137,11 @@ a {
 	padding-bottom: 0.25rem;
 	font: 400 1rem/1 "Montserrat",sans-serif;
 	color: #614e40;
-	transition: .3s ease-in-out;
+	transition: padding-left .3s ease-in-out;
 }
 .navlist__chapter:hover{
 	color: #000000;
-	transition: .3s ease-in-out;
+	transition: padding-left .3s ease-in-out;
 
 	padding-left:0.5rem;
 }
@@ -153,7 +153,7 @@ a {
 .navlist__chapter__text{
 	font: inherit;
 	color: inherit;
-	transition: .3s ease-in-out;
+	transition: padding-left .3s ease-in-out;
 }
 .navlist__chapter__smallText{
 	display: inline-block;
