@@ -34,50 +34,57 @@ exports.render = function(data) {
 		columns.push( { size : 0, imagesInColumn : []} );
 	}
 
-	// console.log( data.imageCollections[data.collection_id].info );
-	for (i=0; i < data.imageCollections[data.collection_id].info.length; i++ ){
+	try {
+		for (i=0; i < data.imageCollections[data.collection_id].info.length; i++ ){
 
-		let smallestColumn = 0;
-		let smallestColumnSize = columns[0].size;
+			let smallestColumn = 0;
+			let smallestColumnSize = columns[0].size;
 
-		for (ii=1; ii < columns.length; ii++){
-			if (columns[ii].size < smallestColumnSize) {
-				smallestColumnSize = columns[ii].size;
-				smallestColumn = ii;
-			};
+			for (ii=1; ii < columns.length; ii++){
+				if (columns[ii].size < smallestColumnSize) {
+					smallestColumnSize = columns[ii].size;
+					smallestColumn = ii;
+				};
+			}
+
+			columns[smallestColumn].imagesInColumn.push({
+				...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id].info[i].file}` ),
+				...{ id : i, caption : data.imageCollections[data.collection_id].info[i].caption }
+			})
+
+			columns[smallestColumn].size += columns[smallestColumn].imagesInColumn[ (columns[smallestColumn].imagesInColumn.length -1) ].heightRatio;
 		}
-
-		columns[smallestColumn].imagesInColumn.push({
-			...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id].info[i].file}` ),
-			...{ id : i, caption : data.imageCollections[data.collection_id].info[i].caption }
-		})
-
-		columns[smallestColumn].size += columns[smallestColumn].imagesInColumn[ (columns[smallestColumn].imagesInColumn.length -1) ].heightRatio;
+	} catch (error) {
+		console.error('error when fetching the gallery\'s info file');
 	}
 
 	let gallery = `<div class="gallery">
 	`;
-	for (i=0; i < columns.length; i++ ){
-		gallery = gallery + `<div class="gallery__column">
-		`;
-		for (ii=0; ii < columns[i].imagesInColumn.length; ii++ ){
-			gallery = gallery + `<div class="preview__widthBox">
-				<div class="preview__widthBox_heightBox" style="padding-bottom:${columns[i].imagesInColumn[ii].heightRatio}%">
-					<img class="preview__image" 
-					id="${columns[i].imagesInColumn[ii].id}"
-					src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
-					data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
-					data-caption="${columns[i].imagesInColumn[ii].caption.replace('\n','<br>')}"
-					alt="${columns[i].imagesInColumn[ii].caption}"
-					loading="lazy">
+	try {
+		for (i=0; i < columns.length; i++ ){
+			gallery = gallery + `<div class="gallery__column">
+			`;
+			for (ii=0; ii < columns[i].imagesInColumn.length; ii++ ){
+				gallery = gallery + `<div class="preview__widthBox">
+					<div class="preview__widthBox_heightBox" style="padding-bottom:${columns[i].imagesInColumn[ii].heightRatio}%">
+						<img class="preview__image" 
+						id="${columns[i].imagesInColumn[ii].id}"
+						src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
+						data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
+						data-caption="${columns[i].imagesInColumn[ii].caption.replace('\n','<br>')}"
+						alt="${columns[i].imagesInColumn[ii].caption}"
+						loading="lazy">
+					</div>
 				</div>
-			</div>
+				`;
+			}
+			gallery= gallery + `</div>
 			`;
 		}
-		gallery= gallery + `</div>
-		`;
+	} catch{
+		console.error('error when rendering the gallery');
 	}
 	gallery = gallery + `</div`;
 
 	return gallery;
-	};
+};

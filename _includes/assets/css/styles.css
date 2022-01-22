@@ -32,7 +32,6 @@ a {
 .pageFlexLayout {
 	background-color: #ffffff;
 	display: flex;
-	flex-wrap: wrap;
 	flex-flow: row;
 	flex-wrap: nowrap;
 
@@ -56,7 +55,7 @@ a {
 .sidebar__line {
 	position: relative;
 	/* left: 10%; */
-	margin: 3rem auto 3rem auto;
+	margin: 1rem auto 4rem auto;
 	height: 1px;
 	width: 80%;
 	background-color: #614e40;
@@ -69,7 +68,7 @@ a {
 	flex-flow: column;
 	height: 1.5rem;
 	width: 100%;
-	margin: 3rem 0 3rem 0;
+	margin: 0.5rem 0 4rem 0;
 	background-color: #000000;
 }
 .langMenu__title{
@@ -113,7 +112,7 @@ a {
 	transition: .3s ease-in-out;
 }
 .langMenu__dropDown__language::before{
-	content: "● "; /* &#9679&nbsp; */
+	content: ""; /* &#9679&nbsp; */
 }
 
 .langMenu__dropDown__language:hover{
@@ -127,8 +126,9 @@ a {
 	padding: 0;
 	margin: 0;
 
-	list-style-type: " ● ";
-	list-style-position: inside;
+	list-style-type: "● ";
+	list-style-position: outside;
+	margin-left: 1rem;
 }
 .navlist__chapter{
 	display: list-item;
@@ -156,7 +156,7 @@ a {
 }
 .navlist__chapter__smallText{
 	display: inline-block;
-	padding: 0 0 0.25rem 1.5rem ;
+	padding: 0 0 0.25rem 0rem ;
 	opacity: 0.5;
 	font: inherit;
 	font-size: 0.75rem;
@@ -195,12 +195,12 @@ a {
 
 /*----------------------share----------------------*/
 .sidebar__share{
-	font: 400 16px "Montserrat", sans-serif;
+	font: 400 1rem "Montserrat", sans-serif;
 	color: #614e40;
 }
 
 .sidebar__share a{
-	font: 400 16px "Montserrat", sans-serif;
+	font: 400 1rem "Montserrat", sans-serif;
 	color: #000000;
 }
 
@@ -369,30 +369,6 @@ a {
 
 	transition: ease-in-out 0.3s;
 }
-
-
-
-.column_main_page_thin { flex: 25%; padding-left: 5px; padding-right: 5px; margin: 0px; }
-
-.column_main_page_thick { flex: 50%; padding-left: 5px; padding-right: 5px; margin: 0px; }
-/*----------------------image container----------------------*/
-.image_container { display: block; position: relative; width: 100%; padding: 0; margin: 0 0px 5px 0px; }
-
-.image_container_first_row { /*consistant height for the first row*/ position: relative; display: block; width: 100%; padding: 0; padding-bottom: 115%; margin: 0 0px 10px 0px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
-
-.image_container img { width: 100%; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
-
-.image_container_first_row img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
-
-.overlay { position: absolute; bottom: 20px; left: 10px; padding: 5px; z-index: 2; background: #000000; transition: .3s ease; opacity: 0; font: 18px "Montserrat", sans-serif; color: #ccbdb3; }
-
-.image_container:hover .overlay { opacity: 1; }
-
-.image_container_first_row:hover .overlay { opacity: 1; }
-
-/*----------------------thumbnail gallery----------------------*/
-.modal_image { /*<-- image is the thumbnail*/ cursor: pointer; transition: 0.3s; width: 100%; margin-bottom: 5px; box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); }
-
 /*----------------modal----------------*/
 .modal{
 	z-index: 10;
@@ -470,7 +446,7 @@ a {
 	background-color: rgba(0, 0, 0, 0.5);
 	padding: 10px;
 	text-align: left;
-	font: 400 16px/1 "Montserrat", sans-serif;
+	font: 400 1rem/1 "Montserrat", sans-serif;
 	color: #ffffff;
 	z-index: 11; 
 }
@@ -500,30 +476,84 @@ a {
 }
 
 /*----------------------text page----------------------*/
-.main_box { flex: 100%; display: flex; flex-direction: column; align-items: center; font: 400 16px "Montserrat", sans-serif; margin: 0; padding: 0; }
+.textPage{
+	width: 80%;
+	max-width: 55rem;
+	margin: 0 auto 0 auto;
+	padding: 2rem 1rem 2rem 1rem;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	align-items: stretch;
+	font: 400 1rem "Montserrat", sans-serif;
+}
+.textPage hr{
+	width: 3rem;
+	height: 1px;
+	background-color: #b9a799;
+	margin: 3rem auto 3rem auto;
+}
+.textPage h1{
+		font: 500 3rem "Montserrat", sans-serif;
+	color: #614e40;
+	text-indent: 0;
+	margin: 2rem 0 2rem 0;
+}
+.textPage p {
+	font: 400 1rem/1.5 "Montserrat", sans-serif;
+	text-align: justify;
+	color: #614e40;
+	text-indent: 0;
+	margin: 1rem 0 0 0;
+}
+.textPage em {
+	margin: 0 0 0 2rem;
+	font: 400 0.75rem/1 "Montserrat", sans-serif;
+	text-align: right;
+	color: #614e40;
 
-.center_box { flex: 100%; max-width: 50em; margin: 0; padding: 0; }
+}
+.textPage table{
+	vertical-align: top;
+	border: 0px;
+}
+.textPage table tr td {
+	min-width: 1rem;
 
-.text_page_flex { background-color: #ffffff; display: flex; flex-wrap: wrap; flex-flow: row; }
-
-.text_div { flex: 70%; padding: 0px; margin: 0px; }
-
-.image_div { flex: 30%; margin: 10px; }
-
-.image_div img { width: 100%; padding-top: 5px; }
-
-/*----------------------text page table----------------------*/
-table { vertical-align: top; border: 0px; font: 400 16px/1.5 "Montserrat", sans-serif; text-align: left; color: #614e40; margin: 0 10px 0 10Px; }
-
-table tbody tr td { vertical-align: top; min-width: 20px; text-align: justify; }
-
-/*----------------------text page formating----------------------*/
-.main_text big { padding: 0 10px 0 10px; margin: 0px; font: 700 24px "Montserrat", sans-serif; text-align: center; color: #614e40; text-indent: 0; }
-
-.main_text p { padding: 0 10px 0 10px; margin: 0px; font: 400 16px/1.5 "Montserrat", sans-serif; text-align: justify; color: #614e40; text-indent: 0; }
-
-.main_text b { padding: 0 10px 0 10px; margin: 0px; font: 700 16px/1.5 "Montserrat", sans-serif; text-align: justify; color: #614e40; text-indent: 0; }
-
-.main_text small { padding: 10px; margin: 0px; font: 400 12px "Montserrat", sans-serif; text-align: left; color: #614e40; text-align: right; display: block; text-indent: 0; }
-
-/*# sourceMappingURL=styles.css.map */
+	font: 400 1rem/1.5 "Montserrat", sans-serif;
+	text-align: left;
+	color: #614e40;
+}
+.textPage table tr > td:first-child {
+font: 400 1rem/1.5 ui-monospace;
+}
+.textPage ul{
+	list-style-type: "-    ";
+	list-style-position: outside;
+	padding-left: 2rem;
+}
+.textPage ul li{
+	font: 400 1rem/1.5 "Montserrat", sans-serif;
+	text-align: justify;
+	color: #614e40;
+	text-indent: 0;
+}
+.textPage ul li::marker{
+	color: #614e40;
+}
+.textPage strong{
+	font: 700 1rem/1.5 "Montserrat", sans-serif;
+	text-align: justify;
+	color: #614e40;
+	text-indent: 0;
+}
+.textPage .imageBox{
+	margin: 2rem auto 2rem auto;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	gap: 1rem;
+}
+.textPage .imageBox__image{
+	max-height:30rem;
+}
