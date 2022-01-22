@@ -1,11 +1,12 @@
 ---
 layout: gallery.11ty.js
 
-page_title: Exterior | HÉLÈNE YOUSSE
-description: Exterior , Créations of Hélène Yousse .
+page_title: Exteriors | HÉLÈNE YOUSSE
+page_description: Exteriors Creations from Hélène Yousse .
 
-chapter_name: Exteriors 
+chapter_name: Exterior
 chapter_caption: 
+chapter_number: 5
 
 collection_id: exterieurs
 number_of_columns: 4

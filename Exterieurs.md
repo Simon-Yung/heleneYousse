@@ -2,7 +2,7 @@
 layout: gallery.11ty.js
 
 page_title: Extérieurs | HÉLÈNE YOUSSE
-page_description: Oeuvres d'extérieurs , Portfolios créatifs d'Hélène Yousse .
+page_description: Oeuvres Extérieurs d'Hélène Yousse .
 
 chapter_name: Extérieurs
 chapter_caption: 

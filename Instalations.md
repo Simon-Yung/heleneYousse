@@ -2,7 +2,7 @@
 layout: gallery.11ty.js
 
 page_title: Installations / Expositions | HÉLÈNE YOUSSE
-page_description: Installations / Expositions , Portfolios créatifs d'Hélène Yousse .
+page_description: Installations et Expositions d'Hélène Yousse .
 
 chapter_name: Installations / Expositions
 chapter_caption: 

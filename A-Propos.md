@@ -2,7 +2,7 @@
 layout: text.njk
 
 page_title: A propos
-page_description: Curriculum, contact et histoires. Portfolios créatifs d'Hélènene Yousse.
+page_description: Curriculum, Contact et mon Histoire.
 
 chapter_name: A propos
 chapter_caption:
@@ -32,7 +32,7 @@ Peu à peu, le vide s'est rempli du ciel et les personnages ont pris leur envol,
 
 Hélène vit avec ses personnages Elle leur parle, elle les touche, les caresse. Ils sont vivants, dans la cuisine ou le salon, accrochés au plafond ou près de la cheminée. Ils ont soif d'espace, Comme elle le dit très bien : "Avec mes personnages, j'ai du ciel entre les mains." .  
 
-*JOËL CAPELLA à l'occasion du catalogue HÉLÈNE YOUSSE, Sales Munipals de Girona*
+*JOËL CAPELLA à l'occasion du catalogue HÉLÈNE YOUSSE, Salles Municipales de Girona*
 
 ------------------------
 
@@ -66,10 +66,10 @@ Hélène vit avec ses personnages Elle leur parle, elle les touche, les caresse.
 - 5 en foires d’art internationales (Espagne, Danemark, Hollande)
 - 12 en espaces alternatifs (Espagne)
 
-Œuvres dans de nombreuses collections publiques et privées (Musée d'Art de Girona, Musée d' Olot, Fondation La Caixa, Fondation Vila Casas, Fondation Niebla ...) 
-Conférences et interviews télévisées (Espagne, France, Allemagne) 
+Œuvres dans de nombreuses collections publiques et privées (Musée d'Art de Girona, Musée d' Olot, Fondation La Caixa, Fondation Vila Casas, Fondation Niebla ...)  
+Conférences et interviews télévisées (Espagne, France, Allemagne)  
 
-Après avoir résidé en Espagne une vingtaine d'année, s'installe en 2014 en Charente Maritime (France). 
+Après avoir résidé en Espagne une vingtaine d'année, s'installe en 2014 en Charente Maritime (France).  
 
 
 ------------------
