@@ -35,7 +35,7 @@ exports.render = function(data) {
 	}
 
 	try {
-		for (i=0; i < data.imageCollections[data.collection_id].info.length; i++ ){
+		for (i=0; i < data.imageCollections[data.collection_id]._info.length; i++ ){
 
 			let smallestColumn = 0;
 			let smallestColumnSize = columns[0].size;
@@ -48,14 +48,14 @@ exports.render = function(data) {
 			}
 
 			columns[smallestColumn].imagesInColumn.push({
-				...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id].info[i].file}` ),
-				...{ id : i, caption : data.imageCollections[data.collection_id].info[i].caption }
+				...resizeImage( `./_data/imageCollections/${data.collection_id}/${data.imageCollections[data.collection_id]._info[i].file}` ),
+				...{ id : i, caption : data.imageCollections[data.collection_id]._info[i].caption }
 			})
 
 			columns[smallestColumn].size += columns[smallestColumn].imagesInColumn[ (columns[smallestColumn].imagesInColumn.length -1) ].heightRatio;
 		}
 	} catch (error) {
-		console.error('error when fetching the gallery\'s info file');
+		console.error('error when fetching the gallery\'s _info file');
 	}
 
 	let gallery = `<div class="gallery">
@@ -71,7 +71,7 @@ exports.render = function(data) {
 						id="${columns[i].imagesInColumn[ii].id}"
 						src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
 						data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
-						data-caption="${columns[i].imagesInColumn[ii].caption.replace('\n','<br>')}"
+						data-caption="${columns[i].imagesInColumn[ii].caption.replace('\\n','<br>')}"
 						alt="${columns[i].imagesInColumn[ii].caption}"
 						loading="lazy">
 					</div>

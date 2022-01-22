@@ -14,7 +14,7 @@ tags: fr
 
 <div class="textPage">
 
-# ARTISTE, SCULPTEURE Hélène Yousse
+# ARTISTE, SCULPTEURE Hélène&nbsp;Yousse
 
 Hélène Yousse pratique l'art d'une manière impérieuse, sans concession, avec urgence.  
 De cette urgence qui ne permet pas l'abandon, qui prend sa source dans l'énergie à fleur de peau, dans la violence de dire immédiatement ce qui est nécessaire.  
