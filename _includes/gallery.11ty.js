@@ -67,7 +67,7 @@ exports.render = function(data) {
 			for (ii=0; ii < columns[i].imagesInColumn.length; ii++ ){
 				gallery = gallery + `<div class="preview__widthBox">
 					<div class="preview__widthBox_heightBox" style="padding-bottom:${columns[i].imagesInColumn[ii].heightRatio}%">
-						<img class="preview__image" 
+						<img class="preview__image"
 						id="${columns[i].imagesInColumn[ii].id}"
 						src="${columns[i].imagesInColumn[ii].thumbnailUrl}"
 						data-target-url="${columns[i].imagesInColumn[ii].OGUrl}"
