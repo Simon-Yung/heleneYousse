@@ -25,7 +25,7 @@ module.exports = (eleventyConfig) => {
 		};
 		return collection;
 	});
-	eleventyConfig.addCollection("EnglishPages", function(collectionApi) {
+	eleventyConfig.addCollection("englishPages", function(collectionApi) {
 		let collection = collectionApi.getFilteredByTag("en").sort( ( A , B ) => {
 			if (A.data.chapter_number < B.data.chapter_number){return -1;}
 			if (A.data.chapter_number > B.data.chapter_number){return +1;}
