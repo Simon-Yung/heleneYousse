@@ -36,8 +36,8 @@
 
 	{%- elif lang == "en" %}
 		{%- for chapter in collections.englishPages %}
-			<li class="navlist__chapter">
 			{%- if chapter.url == page.url %}
+				<li class="navlist__chapter navlist__chapter--Highlight">
 					<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">
 						<span>{{ chapter.data.chapter_name }}<span>
 					{%- if chapter.data.chapter_caption %}
@@ -46,6 +46,7 @@
 					</a>
 				</li>
 			{%- else %}
+				<li class="navlist__chapter">
 					<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">
 						<span>{{ chapter.data.chapter_name }}<span>
 					{%- if chapter.data.chapter_caption %}
@@ -69,8 +70,8 @@
 
 	{%- else %}
 		{%- for chapter in collections.fr %}
-			<li class="navlist__chapter">
 			{%- if chapter.url == page.url %}
+				<li class="navlist__chapter navlist__chapter--Highlight">
 					<a class="navlist__chapter__text navlist__chapter__text--highlight" href="{{ website.url }}{{ chapter.url }}">
 						<span>{{ chapter.data.chapter_name }}<span>
 					{%- if chapter.data.title_caption %}
@@ -79,6 +80,7 @@
 					</a>
 				</li>
 			{%- else %}
+				<li class="navlist__chapter">
 					<a class="navlist__chapter__text" href="{{ website.url }}{{ chapter.url }}">
 						<span>{{ chapter.data.chapter_name }}<span>
 					{%- if chapter.data.title_caption %}
