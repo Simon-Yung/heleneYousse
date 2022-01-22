@@ -6,11 +6,11 @@
 		<li><a class="langMenu__dropDown__language" href="{{ website.url }}/lang=en/" >English</a></li>
 		{%- else %}
 			{%- if lang == "fr" %}
+				<li><a class="langMenu__dropDown__language" href="" >Français</a></li>
+				<li><a class="langMenu__dropDown__language" href="/lang=en/{{ page.url }}" >English</a></li>
+			{%- elif lang == "en" %}
 				<li><a class="langMenu__dropDown__language" href="{{ page.url | replace( '/lang=en/' , '/' ) }}" >Français</a></li>
 				<li><a class="langMenu__dropDown__language" href="{{ page.url }}" >English</a></li>
-			{%- elif lang == "en" %}
-				<li><a class="langMenu__dropDown__language" href="{{ page.url }}" >Français</a></li>
-				<li><a class="langMenu__dropDown__language" href="/lang=en{{ page.url }}" >English</a></li>
 			{%- else %}
 				<li><a class="langMenu__dropDown__language" href="{{ page.url }}" >Français</a></li>
 				<li><a class="langMenu__dropDown__language" href="/lang=en{{ page.url }}" >English</a></li>
