@@ -21,7 +21,7 @@ module.exports = (eleventyConfig) => {
 			return 0;
 		});
 		for (let i=0; i< collection.length; i++){
-			console.log(collection[i].fileSlug)
+			// console.log(collection[i].fileSlug)
 		};
 		return collection;
 	});
@@ -32,7 +32,7 @@ module.exports = (eleventyConfig) => {
 			return 0;
 		});
 		for (let i=0; i< collection.length; i++){
-			console.log(collection[i].fileSlug)
+			// console.log(collection[i].fileSlug)
 		};
 		return collection;
 	});

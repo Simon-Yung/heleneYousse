@@ -55,7 +55,7 @@ exports.render = function(data) {
 			columns[smallestColumn].size += columns[smallestColumn].imagesInColumn[ (columns[smallestColumn].imagesInColumn.length -1) ].heightRatio;
 		}
 	} catch (error) {
-		console.error('error when fetching the gallery\'s _info file');
+		console.error(`error when fetching the \"${data.collection_id}\"\'s _info file: ${error}`);
 	}
 
 	let gallery = `<div class="gallery">
