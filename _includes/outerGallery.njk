@@ -9,13 +9,13 @@
 
 			{% include "components/analytics.njk" %}
 
-			<link rel="stylesheet" href="{{website.completeUrl}}/assets/css/styles.css">
+			<link rel="stylesheet" href="{{website.url}}/assets/css/styles.css">
 			<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700&display=swap" rel="stylesheet">
-			<script src="{{website.completeUrl}}/assets/js/modal.js" defer> </script>
-			<script src="{{website.completeUrl}}/assets/js/share.js" defer> </script>
+			<script src="{{website.url}}/assets/js/modal.js" defer> </script>
+			<script src="{{website.url}}/assets/js/share.js" defer> </script>
 
-			{# <script src="{{website.completeUrl}}/assets/js/share.js" defer> </script> #}
-			{# {% seo %} <--------------------------- #}
+			{% include "components/headStuff.njk" %}
+
 	</head>
 	<body class="pageFlexLayout">
 		{% include "components/sidebar.njk" %}
