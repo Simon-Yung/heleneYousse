@@ -525,8 +525,9 @@ a {
 	text-align: left;
 	color: #614e40;
 }
-.textPage table tr > td:first-child {
-font: 400 1rem/1.5 ui-monospace;
+.textPage table tr > td:nth-child(-n+2) {
+	font: 400 1rem/1.5 ui-monospace;
+	vertical-align: top;
 }
 .textPage ul{
 	list-style-type: "-    ";
