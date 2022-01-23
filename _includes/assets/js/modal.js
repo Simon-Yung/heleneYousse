@@ -1,4 +1,5 @@
 const modalWindow = document.getElementById('modal');
+const modalBackground = document.getElementById('modalBackground');
 const modalImage = document.getElementById('modalContent');
 const caption = document.getElementById('caption');
 const closeButton = document.getElementById('close');
@@ -11,9 +12,11 @@ const numberOfPreviews = previews.length;
 
 let currentImage = null; 
 for ( let i=0; i < previews.length; i++){
-	previews[i].addEventListener('click', () => { console.log('4'); openModal( previews[i].id ); })
+	previews[i].addEventListener('click', () => { openModal( previews[i].id ); })
 }
 closeButton.addEventListener('click', (e) => {closeModal()});
+modalImage.addEventListener('click', (e) => {closeModal()});
+loader.addEventListener('click', (e) => {closeModal()});
 previousButton.addEventListener('click', (e) => {previousModal()});
 nextButton.addEventListener('click', (e) => {nextModal()});
 
