@@ -2,13 +2,17 @@
 
 <div class="sidebar">
 
+	{%- if lang == "fr" %}
 	<a href="/"><img class="sidebar__logo" src="{{website.url}}/assets/images/logo.png"></a>
+	{%- elif lang == "en" %}
+	<a href="/lang=en/"><img class="sidebar__logo" src="{{website.url}}/assets/images/logo.png"></a>
+	{%- endif %}
 
 	{%- if lang == "fr" %}
-	<p class="sidebar__secondaryText">En Exposition à la Galerie <b>Kunst Unter Uns </b> (Jusqu'au 5 juin)</p>
+	<p class="sidebar__secondaryText">En Exposition à la Galerie <b>Kunst&nbsp;Unter&nbsp;Uns </b> (Jusqu'au&nbsp;5&nbsp;juin)</p>
 	<p class="sidebar__secondaryText">Basler&nbsp;Str&nbsp;27 - 79540&nbsp;Lörrach&nbsp;(Allemagne),<br>+33&nbsp;612&nbsp;567&nbsp;315, <a href="mailto:phbordonnet@gmail.com?subject=EXPOSITION Hélène Yousse à la Galerie Kunst Unter Uns">phbordonnet@gmail.com</a></p>
 	{%- elif lang == "en" %}
-	<p class="sidebar__secondaryText">On Exhibit at <b>Galerie Kunst Unter Uns</b> (Until June 5)</p>
+	<p class="sidebar__secondaryText">On Exhibit at <b>Galerie&nbsp;Kunst&nbsp;Unter&nbsp;Uns</b> (Until&nbsp;5th&nbsp;of&nbsp;June)</p>
 	<p class="sidebar__secondaryText">Basler&nbsp;Str.&nbsp;27 - 79540&nbsp;Lörrach&nbsp;(Allemagne),<br>+33&nbsp;612&nbsp;567&nbsp;315, <a href="mailto:phbordonnet@gmail.com?subject=EXPOSITION Hélène Yousse at the Galerie Kunst Unter Uns">phbordonnet@gmail.com</a></p>
 	{%- endif %}
 
@@ -17,20 +21,6 @@
 	{% include "components/navlist.njk" %}
 
 	{% include "components/language_menu.njk" %}
-
-	{# <iframe class="news_iframe" scrolling="no" 
-			{% if page.path contains "lang=en" %}
-				src="{{ "/lang=en/news.html" | absolute_url }}" onload="resizeIframe(this)">
-			{% elsif page.path contains "lang=de" %}
-				src="{{ "/lang=de/news.html" | absolute_url }}" onload="resizeIframe(this)">
-			{% elsif page.path contains "lang=va" %}
-				src="{{ "/lang=va/news.html" | absolute_url }}" onload="resizeIframe(this)">
-			{% elsif page.path contains "lang=ca" %}
-				src="{{ "/lang=ca/news.html" | absolute_url }}" onload="resizeIframe(this)">
-			{% else %}
-				src="{{ "/news.html" | absolute_url }}" onload="resizeIframe(this)">
-			{% endif %}
-	</iframe> #}
 
 	<img class="sidebar__img" src="{{ website.url }}/assets/images/sidebarImg.jpg" alt="Latest expo">
 

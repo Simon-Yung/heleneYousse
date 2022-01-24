@@ -80,7 +80,7 @@ a {
 .sidebar__secondaryText{
 	padding: 0px;
 	font: 400 0.75rem "Montserrat", sans-serif;
-	text-align: justify;
+	text-align: center;
 	color: #ccb7a9;
 }
 .sidebar__secondaryText a{
