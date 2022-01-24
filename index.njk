@@ -44,14 +44,25 @@ tags: fr
 	</a>
 
 <!-- {# <div class="column_main_page_thick"> #} -->
-
-	<div class="video_container landingPageGrid__wrapper--video">
-		{# <video id="AutoplayVideo" autoplay controls muted #}
-		<video id="AutoplayVideo" controls
+	<div class="videoContainer landingPageGrid__wrapper--video">
+		<video class="videoContainer__video" id="AutoplayVideo"
 			src="{{website.url}}/video/Passages-Helene_Yousse_SD240p.mp4">
 		<p>Your browser doesn't support HTML5 video. Here is a <a href="">link to the video</a> instead.</p> 
 		</video>
+		<img class="videoContainer__playButton" id="playBtn" src="/assets/images/play.png">
 	</div>
+<script>
+const video = document.getElementById('AutoplayVideo');
+const playBtn = document.getElementById('playBtn');
+
+function togglePlay() {
+		video.play();
+		playBtn.style.display = 'none';
+		video.controls = true;
+}
+playBtn.addEventListener('click', togglePlay);
+
+</script>
 
 	<a class="landingPageGrid__wrapper landingPageGrid__wrapper--middleLarge" href="{{website.url}}/Terres-Bronzes">
 		<img class="landingPageGrid__wrapper__image" src="{{website.url}}/img/19HeleneYousse_Terres_JCP19_C.jpg">
